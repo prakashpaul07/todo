@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/39855711a0.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		body{
+			background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUq-WpYy5lMswAGDfnBe68w27COn1lf-JYxQ&usqp=CAU");
+  			background-size:cover;
+
+
+		}
+		.header{
+  			color: white;
+  			text-align: center;
+		}
+		.header input{
+			padding: 0.5%;
+			width: 30%;
+		}
+		.listtype{
+			list-style: none;
+		}
+		.list{
+			background-color: lightblue;
+			color:black;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+<p><input style="background-color:#D5F5E3;color: black;" type="text" id="new" placeholder="enter something"></p>
+<ul>
+	
+</ul>
+<button onclick="todo()">submit</button></div>
+<script type="text/javascript">
+		function todo(){
+		let newtodo=document.getElementById('new').value,todolist=[];
+		//console.log(text)
+		if(newtodo===""){
+			alert("enter something")
+		}
+		else{
+			add(newtodo)
+		}
+		todolist.push(newtodo)
+		console.log(todolist);
+		//add(newtodo)
+		document.getElementById('new').value=""
+
+	}
+	function add(newValue){
+		let ul=document.querySelector("ul")
+		console.log(ul)
+		let li=document.createElement("li");
+		li.innerHTML=`
+		<span class="list">${newValue}</span>
+		<i class="fa-solid fa-rectangle-xmark"></i>`
+		li.classList.add("listtype")
+		ul.appendChild(li)	
+	}
+	</script>
+</body>
+</html>
